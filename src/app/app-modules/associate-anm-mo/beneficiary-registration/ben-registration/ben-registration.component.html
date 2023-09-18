@@ -4,7 +4,7 @@
     <h2 class="inner fontStyleHeading">{{currentLanguageSet?.beneficiaryRegistration}}</h2>
     <button 
     mat-raised-button
-      *ngIf="selectedRole === 'MO' || selectedRole === 'ANM'"
+      *ngIf="selectedRole === 'MO' || selectedRole === 'ANM' || (selectedRole === 'Associate' && enableUpdateButton)"
       style="width: 200px; margin-top: -50px; float: right;" 
       class="buttonColor quesButton fontStyleButton"
       (click)="openEcdQuestionnaire()">
@@ -515,24 +515,6 @@
                   <mat-datepicker #eddPicker></mat-datepicker>
                 </mat-form-field>
             </div>
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 box marginAlign" *ngIf="!enableMotherRecord  && selectedRole !== 'Associate'">
-              <mat-form-field appearance="outline" class="fieldAlignment fontStyle fieldStyleDisabled">
-                  <mat-label class="fontStyleDisabled">{{ currentLanguageSet?.dob}}</mat-label>
-                  <input 
-                    matInput 
-                    class="fontStyleDisabled fieldStyleDisabled"
-                    [max] = "maxDate"
-                    [matDatepicker]="picker" 
-                    [required]="enableMotherRecord ? true : false"
-                    [readonly] = ""
-                    formControlName="dob">
-                  <mat-hint>MM/DD/YYYY</mat-hint>
-                  <mat-datepicker-toggle matSuffix [for]="picker" disabled></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-            </div> -->
-
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 box marginAlign" *ngIf="!enableMotherRecord">
               <mat-form-field appearance="outline" class="fieldAlignment fontStyle ">
                   <mat-label class="fontStyleDisabled">{{ currentLanguageSet?.dob}}</mat-label>

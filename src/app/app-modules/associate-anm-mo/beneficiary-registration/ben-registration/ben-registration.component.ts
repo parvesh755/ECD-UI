@@ -305,10 +305,9 @@ else{
         dobDate = new Date(dobDate.getTime() + dobDate.getTimezoneOffset() * 60000)
 
         this.benRegistrationForm.controls.dob.setValue(dobDate);
-        if( this.benRegistrationForm.controls.dob.value != undefined || this.benRegistrationForm.controls.dob.value != null){
+        if(this.benRegistrationForm.controls.dob.value){
           this.benRegistrationForm.controls.dob.setErrors(null)
         }
-
       }
 
       if(viewDetails.fatherName !== undefined && viewDetails.fatherName !==  null) {
