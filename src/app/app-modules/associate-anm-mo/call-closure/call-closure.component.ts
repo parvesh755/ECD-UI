@@ -671,7 +671,7 @@ private sms_service: SmsTemplateService,
 
   getCallTypes() {
     let reqObj={
-      providerServiceMapID: 1252
+      providerServiceMapID: sessionStorage.getItem('providerServiceMapID')
     }
     this.associateAnmMoService.getCallTypes(reqObj).subscribe(
       (response:any) => {

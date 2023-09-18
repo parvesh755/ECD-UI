@@ -579,7 +579,7 @@ export class AgentsInnerpageComponent implements OnInit {
 
     getCallTypes() {
       let reqObj={
-        providerServiceMapID: 1252
+        providerServiceMapID: sessionStorage.getItem('providerServiceMapID')
       }
       this.associateAnmMoService.getCallTypes(reqObj).subscribe(
         (response:any) => {
